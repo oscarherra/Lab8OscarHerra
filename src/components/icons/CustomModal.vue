@@ -72,7 +72,7 @@ function handleClose() {
 function resetForm() {
   form.value = {
     proyecto: '',
-    tareas: [''],
+    tareas: '',
     avance: 0
   }
 }

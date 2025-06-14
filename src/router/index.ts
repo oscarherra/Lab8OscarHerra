@@ -4,14 +4,18 @@ import ProyectosView from '@/views/ProyectosView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-{
+    {
       path: '/',
       name: 'main',
       component: () => import('../layouts/ProyectsLayout.vue'),
       children: [
         {
-          path: '/proyectos', // <- Aquí está el problema
-          name: 'proyectos',
+          path: '',
+          redirect: { name: 'Principal' }, // Redirige a Principal por defecto
+        },
+        {
+          path: 'Principal', // Nota: sin slash inicial
+          name: 'Principal',
           component: ProyectosView,
         },
       ]
